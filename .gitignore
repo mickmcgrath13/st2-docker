@@ -1,0 +1,6 @@
+packs
+packs.dev
+*.pyc
+conf
+node_modules/
+docker-compose.yml
