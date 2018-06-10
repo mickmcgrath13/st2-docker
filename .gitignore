@@ -1,5 +1,7 @@
 packs
 packs.dev
+bitovi-stackstorm-exchange
+stackstorm-config
 *.pyc
 conf
 node_modules/
