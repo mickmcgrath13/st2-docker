@@ -1,0 +1,21 @@
+base_url: https://api.github.com
+deployment_environment: dev
+github_type: online
+repository_sensor:
+  count: 50
+  event_type_whitelist:
+  - IssuesEvent
+  - IssueCommentEvent
+  - ForkEvent
+  - WatchEvent
+  - ReleaseEvent
+  - PushEvent
+  - RepositoryEvent
+  organizations:
+  - name: bitovi-stackstorm-exchange
+    user: mickmcgrath13
+  repositories:
+  - name: bitovi_packs
+    user: mickmcgrath13
+token: 6c0807aa9833aa8a9185c39c3ec0b5d2b1ab1d5f
+user: mickmcgrath13

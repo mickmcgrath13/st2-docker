@@ -1,0 +1,7 @@
+github_exhange_org: bitovi-stackstorm-exchange
+id: 5b1cd743d3057700eeeb7a5d
+pack: bitovi_packs
+skip_dependencies_on_install: true
+stackstorm_environment: dev
+github_token: 6c0807aa9833aa8a9185c39c3ec0b5d2b1ab1d5f
+github_user: mickmcgrath13
