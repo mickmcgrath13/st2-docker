@@ -1,0 +1,82 @@
+version: '3'
+services:
+  stackstorm:
+    image: 'stackstorm/stackstorm:${TAG:-latest}'
+    env_file:
+      - conf/stackstorm.env
+      - conf/mongo.env
+      - conf/rabbitmq.env
+      - conf/postgres.env
+      - conf/redis.env
+    ports:
+      - '443:443'
+    networks:
+      - public
+      - private
+    volumes:
+      - 'stackstorm-packs-volume:/opt/stackstorm/packs'
+      - './stackstorm-config:/opt/stackstorm/configs'
+      - 'stackstorm-virtualenvs-volume:/opt/stackstorm/virtualenvs'
+      - 'stackstorm-log-volume:/var/log'
+      - './packs.dev:/opt/stackstorm/packs.dev'
+      - './bitovi-stackstorm-exchange:/opt/stackstorm/bitovi-stackstorm-exchange'
+      - './runtime/entrypoint.d:/st2-docker/entrypoint.d'
+      - './runtime/st2.d:/st2-docker/st2.d'
+      - './conf/stackstorm.env:/st2-docker/env'
+      - './sackstorm-chatops/st2chatops.env:/opt/stackstorm/chatops/st2chatops.env'
+    dns_search: .
+  mongo:
+    image: 'mongo:3.4'
+    env_file:
+      - conf/mongo.env
+    networks:
+      - private
+    volumes:
+      - 'mongo-volume:/data/db'
+      - 'mongo-configdb-volume:/data/configdb'
+    dns_search: .
+  rabbitmq:
+    image: 'rabbitmq:3.6-management'
+    env_file:
+      - conf/rabbitmq.env
+    networks:
+      - private
+    volumes:
+      - 'rabbitmq-volume:/var/lib/rabbitmq'
+    dns_search: .
+  postgres:
+    image: 'postgres:9.6'
+    env_file:
+      - conf/postgres.env
+    networks:
+      - private
+    volumes:
+      - 'postgres-volume:/var/lib/postgresql/data'
+    dns_search: .
+  redis:
+    image: 'redis:4.0'
+    env_file:
+      - conf/redis.env
+    networks:
+      - private
+    volumes:
+      - 'redis-volume:/data'
+    dns_search: .
+    command:
+      - bash
+      - '-c'
+      - ' docker-entrypoint.sh --requirepass "$$REDIS_PASSWORD" '
+volumes:
+  mongo-volume: null
+  mongo-configdb-volume: null
+  postgres-volume: null
+  rabbitmq-volume: null
+  redis-volume: null
+  stackstorm-packs-volume: null
+  stackstorm-virtualenvs-volume: null
+  stackstorm-log-volume: null
+networks:
+  public:
+    driver: bridge
+  private:
+    driver: bridge

@@ -1,8 +1,7 @@
 packs
 packs.dev
 bitovi-stackstorm-exchange
-stackstorm-config
+stackstorm-config/st2chatops.env
 *.pyc
 conf
 node_modules/
-docker-compose.yml
