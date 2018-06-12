@@ -23,7 +23,7 @@ services:
       - './runtime/entrypoint.d:/st2-docker/entrypoint.d'
       - './runtime/st2.d:/st2-docker/st2.d'
       - './conf/stackstorm.env:/st2-docker/env'
-      - './sackstorm-chatops/st2chatops.env:/opt/stackstorm/chatops/st2chatops.env'
+      - './stackstorm-chatops/st2chatops.env:/opt/stackstorm/chatops/st2chatops.env'
     dns_search: .
   mongo:
     image: 'mongo:3.4'
