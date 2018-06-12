@@ -16,7 +16,7 @@ services:
     volumes:
       - 'stackstorm-packs-volume:/opt/stackstorm/packs'
       - './stackstorm-config:/opt/stackstorm/configs'
-      - 'stackstorm-virtualenvs-volume:/opt/stackstorm/virtualenvs'
+      - './stackstorm-virtualenvs:/opt/stackstorm/virtualenvs'
       - 'stackstorm-log-volume:/var/log'
       - './packs.dev:/opt/stackstorm/packs.dev'
       - './bitovi-stackstorm-exchange:/opt/stackstorm/bitovi-stackstorm-exchange'

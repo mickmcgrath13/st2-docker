@@ -1,7 +1,9 @@
 packs
 packs.dev
-bitovi-stackstorm-exchange
+bitovi-stackstorm-exchange/
 stackstorm-config/st2chatops.env
+stackstorm-virtualenvs/
+stackstorm-config/
 *.pyc
 conf
 node_modules/
