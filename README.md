@@ -50,7 +50,7 @@ skip_dependencies_on_install: true
 stackstorm_environment: dev
 ```
 
-> Note: Alternatively, you can add `github.yaml` and `bitovi_packs.yaml` with the above contents, respectively, and then run the `packs.load` action for both packs.
+> Note: Alternatively, you can add `github.yaml` and `bitovi_packs.yaml` with the above contents, respectively, to `stackstorm-config/`, and then run the `packs.load` action for both packs.
 
 
 ## Local Chatops Bot
