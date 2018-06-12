@@ -15,6 +15,7 @@ Bitovi StackStorm Docker comes with the following packs:
 
 To get local changes into the system, you need to commit your changes locally (no need to push) and then run the `bitovi_packs.install` action with value of `file:////opt/stackstorm/bitovi-stackstorm-exchange/my_pack`.
 
+### LOCAL CI/CD FTW!
 Packs that have been created with `bitovi_packs.create` and installed into `bitovi-stackstorm-exchange/` directory will automatically re-install from the local pack folder when you commit your changes locally (no need to manually reinstall)
 
 For more information on developing with packs
