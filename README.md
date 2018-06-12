@@ -38,7 +38,6 @@ deployment_environment: dev
 github_type: online
 token: your_github_personal_access_token
 user: your_github_user
-
 ```
 Do the same for `bitovi_packs`
 ```
@@ -49,6 +48,9 @@ pack: bitovi_packs
 skip_dependencies_on_install: true
 stackstorm_environment: dev
 ```
+
+You'll also need to run `github.store_oath_token` with your token from the `Actions` page.
+
 
 > Note: Alternatively, you can add `github.yaml` and `bitovi_packs.yaml` with the above contents, respectively, to `stackstorm-config/`, and then run the `packs.load` action for both packs.
 
