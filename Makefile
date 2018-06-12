@@ -6,6 +6,9 @@ build:
 env:
 	bin/write-env.sh conf
 
+init:
+	bin/init.sh && bin/write-env.sh conf
+
 up:
 	docker-compose up -d
 
