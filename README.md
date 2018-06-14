@@ -29,6 +29,11 @@ Open `https://localhost` in your browser.
 
 > StackStorm Username/Password can be found in: `cat conf/stackstorm.env`
 
+> **Note:** If you log into the stackstorm container and run `st2ctl status` to find that the mistral services are not running, try
+> `docker-compose down -v && docker-compose up`
+> [Source](https://github.com/StackStorm/st2-docker/issues/133#issuecomment-391549445)
+
+
 Configure the `github` and `bitovi_packs`
 Go to the [Packs page](https://localhost/#/packs), and select the `github` pack
 Fill in the details
