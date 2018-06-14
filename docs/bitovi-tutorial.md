@@ -1,7 +1,7 @@
 # Tutorial for Bitovi pack developmnet
 
 Bitovi StackStorm Docker comes with the following packs:
-- [bitvoi_packs](https://github.com/bitovi-stackstorm-exchange/bitvoi_packs)
+- [bitovi_packs](https://github.com/bitovi-stackstorm-exchange/bitovi_packs)
 - [github](https://github.com/bitovi-stackstorm-exchange/github)
 
 
